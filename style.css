@@ -89,7 +89,8 @@ body {
 }
 
 .header-divider {
-    width: 620px;
+    width: 80%;
+    max-width: 620px;
     height: 2px;
     margin: 3rem auto 0;
     background: linear-gradient(to right, transparent, var(--gold), transparent);
@@ -122,6 +123,7 @@ body {
         0 0 0 1px var(--border),
         inset 0 0 20px rgba(255,255,255,0.03);
     position: relative;
+    min-height: 480px; /* uniform card height */
 }
 
 /* Optional separator line between cards */
@@ -147,7 +149,7 @@ body {
     width: 100%;
     max-height: 240px;
     border-radius: 12px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     object-fit: contain;
     background-color: var(--paper);
     padding: 0.25rem;
@@ -179,7 +181,7 @@ body {
         0 20px 40px rgba(0,0,0,0.35),
         inset 0 0 20px rgba(255,255,255,0.03);
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .drink-no-photo h1 {
@@ -192,8 +194,8 @@ body {
    NAME
 ========================= */
 .drink-name {
-    font-size: 2.2rem;
-    margin: 0 0 1.5rem;
+    font-size: 2rem;
+    margin: 0 0 1rem;
     font-weight: 500;
 }
 
@@ -201,9 +203,9 @@ body {
    SECTION HEADERS
 ========================= */
 .section-title {
-    margin: 1.5rem 0 0.8rem;
-    font-size: 1.5rem;
-    letter-spacing: 0.35em;
+    margin: 1rem 0 0.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
     position: relative;
@@ -212,9 +214,10 @@ body {
 .section-title::after {
     content: "";
     display: block;
-    width: 15rem;
-    height: .5rem;
-    margin: 1rem auto 0;
+    width: 80%;
+    max-width: 15rem;
+    height: 0.4rem;
+    margin: 0.5rem auto 0;
     background: linear-gradient(to right, transparent, var(--border), transparent);
 }
 
@@ -228,8 +231,8 @@ body {
 }
 
 .drink-section li {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
+    margin: 0.3rem 0;
+    font-size: 1.1rem;
     color: var(--muted);
 }
 
@@ -237,8 +240,8 @@ body {
    ALLERGENS
 ========================= */
 .drink-section li.allergen {
-    font-size: 1rem;
-    letter-spacing: 0.18em;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--accent);
 }
@@ -246,29 +249,35 @@ body {
 /* =========================
    RESPONSIVE CARD SIZING
 ========================= */
-@media (max-width: 600px) {
-    #menu {
-        gap: 1.5rem;
-    }
+
+/* Very small phones */
+@media (max-width: 480px) {
     .drink {
-        flex: 1 1 calc(50% - 1.5rem);
+        flex: 1 1 calc(100% - 1rem);
+        min-height: 440px;
     }
 }
 
-@media (min-width: 601px) and (orientation: portrait) {
+/* Phones: 2 per row */
+@media (min-width: 481px) and (max-width: 768px) {
     .drink {
-        flex: 1 1 calc(50% - 2.5rem);
+        flex: 1 1 calc(50% - 1rem);
+        min-height: 460px;
     }
 }
 
-@media (min-width: 601px) and (orientation: landscape) {
+/* Tablets: 3 per row */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .drink {
+        flex: 1 1 calc(33.333% - 1.66rem);
+        min-height: 480px;
+    }
+}
+
+/* Desktops: 3 per row */
+@media (min-width: 1201px) {
     .drink {
         flex: 1 1 calc(33.333% - 2.5rem);
-    }
-}
-
-@media (min-width: 1024px) {
-    .drink {
-        flex: 1 1 calc(33.333% - 2.5rem);
+        min-height: 480px;
     }
 }
