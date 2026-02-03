@@ -54,7 +54,7 @@ function renderDrinks(drinks) {
             .attr("alt", d.name);
 
         img.on("error", function() {
-            img.remove();
+            img.remove(); // remove broken img
             container.insert("div", ":first-child")
                 .attr("class", "drink-no-photo")
                 .html(`<h1>No Image Available</h1>`);
@@ -68,21 +68,21 @@ function renderDrinks(drinks) {
 
     // CONTENTS
     drink.filter(d => d.contents?.length).each(function(d) {
-        d3.select(this).append("div").attr("class", "section-title").text("Contents");
+        const section = d3.select(this).append("div").attr("class", "section-title").text("Contents");
         d3.select(this).append("ul").attr("class", "drink-section")
             .selectAll("li").data(d.contents).enter().append("li").text(d => d);
     });
 
     // DESCRIPTION
     drink.filter(d => d.description?.length).each(function(d) {
-        d3.select(this).append("div").attr("class", "section-title").text("Description");
+        const section = d3.select(this).append("div").attr("class", "section-title").text("Description");
         d3.select(this).append("ul").attr("class", "drink-section")
             .selectAll("li").data(d.description).enter().append("li").text(d => d);
     });
 
     // ALLERGENS
     drink.filter(d => d.allergens?.length).each(function(d) {
-        d3.select(this).append("div").attr("class", "section-title").text("Allergens");
+        const section = d3.select(this).append("div").attr("class", "section-title").text("Allergens");
         d3.select(this).append("ul").attr("class", "drink-section")
             .selectAll("li").data(d.allergens).enter()
             .append("li").attr("class", "allergen")

@@ -103,7 +103,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2.5rem;
-    align-items: stretch; /* ensures all cards in a row have equal height */
 }
 
 /* =========================
@@ -123,9 +122,6 @@ body {
         0 0 0 1px var(--border),
         inset 0 0 20px rgba(255,255,255,0.03);
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 /* Optional separator line between cards */
@@ -250,28 +246,28 @@ body {
 /* =========================
    RESPONSIVE CARD SIZING
 ========================= */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     #menu {
-        gap: 1rem;
+        gap: 1.5rem;
     }
-    .drink {
-        flex: 1 1 calc(100% - 1rem);
-    }
-}
-
-@media (min-width: 481px) and (max-width: 800px) {
     .drink {
         flex: 1 1 calc(50% - 1.5rem);
     }
 }
 
-@media (min-width: 801px) and (max-width: 1024px) {
+@media (min-width: 601px) and (orientation: portrait) {
     .drink {
-        flex: 1 1 calc(50% - 2rem);
+        flex: 1 1 calc(50% - 2.5rem);
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 601px) and (orientation: landscape) {
+    .drink {
+        flex: 1 1 calc(33.333% - 2.5rem);
+    }
+}
+
+@media (min-width: 1024px) {
     .drink {
         flex: 1 1 calc(33.333% - 2.5rem);
     }
