@@ -55,7 +55,7 @@ function renderDrinks(drinks) {
 
         img.on("error", function() {
             img.remove(); // remove broken img
-            container.insert("div", ":first-child") // insert at top
+            container.insert("div", ":first-child")
                 .attr("class", "drink-no-photo")
                 .html(`<h1>No Image Available</h1>`);
         });
