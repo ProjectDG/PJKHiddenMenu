@@ -54,7 +54,7 @@ function renderDrinks(drinks) {
             .attr("alt", d.name);
 
         img.on("error", function() {
-            img.remove(); // remove broken img
+            img.remove();
             container.insert("div", ":first-child")
                 .attr("class", "drink-no-photo")
                 .html(`<h1>No Image Available</h1>`);
