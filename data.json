@@ -3,7 +3,13 @@
     {
       "name": "Shiso Lovely",
       "photo": "shisoLovely.jpg",
-      "contents": ["Vodka", "Shiso", "Simple Syrup", "Lemon Juice", "Soda Water"],
+      "contents": [
+        "Vodka", 
+        "Shiso", 
+        "Simple Syrup", 
+        "Lemon Juice", 
+        "Soda Water"
+      ],
       "description": ["Bright", "Herbal", "Refreshing"],
       "allergens": ["Citrus"],
       "keywords": ["herbal", "vodka", "refreshing"]
@@ -11,19 +17,74 @@
     {
       "name": "PJK Old Fashioned",
       "photo": "pjkOldFashioned.jpg",
-      "contents": ["Rye Whiskey", "Angostura & Citrus Bitters", "Orange & Cherry Garnish"],
+      "contents": [
+        "Rye Whiskey", 
+        "Black Tea Simple Syrup", 
+        "Angostura & Citrus Bitters",
+         "Orange & Cherry Garnish"
+        ],
       "description": ["Strong", "Smooth", "Citrusy"],
       "allergens": ["Citrus"],
       "keywords": ["whiskey", "strong", "classic"]
     },
     {
-      "name": "After Hours",
-      "photo": "placeholder.jpg",
-      "contents": ["St. George Botanivore", "St. George Citrus", "Lillet Blanc", "Orange Bitters"],
-      "description": ["Strong", "Citrusy", "Classic"],
+      "name": "Sake Sangria",
+      "photo": "sakeSangria.jpg",
+      "contents": [
+        "Sake",
+        "Domaine De Canton",
+        "Chambord",
+        "Dry Curacao",
+        "Pineapple Juice",
+        "Pomegranate Juice",
+        "Lemon Juice",
+        "Club Soda"
+      ],
+      "description": ["Fruity", "Bright", "Light"],
       "allergens": ["Citrus"],
-      "keywords": ["martini", "botanivore", "liqueur", "vermouth", "orange bitters"]
+      "keywords": ["sake", "sangria", "fruity", "refreshing", "wine-style"]
+    },
+    {
+      "name": "Salt & Sun",
+      "photo": "saltAndSun.jpg",
+      "contents": [
+        "Blanco Tequila",
+        "Cointreau",
+        "Lime Juice",
+        "Agave",
+        "Salt Rim (optional)"
+      ],
+      "description": ["Bright", "Citrusy", "Balanced"],
+      "allergens": ["Citrus"],
+      "keywords": ["tequila", "citrus", "margarita-style", "refreshing"]
+    },
+    {
+      "name": "Up All Night",
+      "photo": "upAllNight.jpg",
+      "contents": [
+        "Vodka",
+        "Espresso Liqueur",
+        "Amaro Montenegro",
+        "Five Spice Syrup",
+        "Espresso"
+      ],
+      "description": ["Bold", "Rich", "Spiced"],
+      "allergens": [],
+      "keywords": ["vodka", "espresso", "coffee", "nightcap", "spiced"]
+    },
+    {
+      "name": "Hidden Gems",
+      "photo": "qrCode.jpg",
+      "contents": [
+        "Scan for access to our Secret Drink Menu!"
+      ],
+      "description": [],
+      "allergens": [],
+      "keywords": ["qr", "digital", "scannable"]
     }
+
+
+
 
   ]
 }

@@ -1,38 +1,44 @@
 /* =========================
-   THEMES
+   THEMES WITH GRADIENTS
 ========================= */
 html[data-theme="classic"] {
-    --bg: #f3f1ec;
-    --paper: #faf8f4;
+    --bg-gradient: linear-gradient(135deg, #f3f1ec 0%, #e8e3d9 100%);
+    --card-gradient: linear-gradient(145deg, #faf8f4 0%, #f0ede4 100%);
     --ink: #151312;
     --muted: #6b655f;
     --border: #d8d3ca;
     --accent: #9b1c1c;
     --gold: #bfa36a;
+
+    --scroll-track: #f3f1ec;
+    --scroll-thumb: #6b655f;
+    --scroll-thumb-hover: #bfa36a;
 }
 
 html[data-theme="dark"] {
-    --bg: #0b0b0b;
-    --paper: #111111;
+    --bg-gradient: linear-gradient(135deg, #0b0b0b 0%, #1a1a1a 100%);
+    --card-gradient: linear-gradient(145deg, #111111 0%, #1a1a1a 100%);
     --ink: #f5f4f2;
     --muted: #a8a29e;
     --border: #262626;
     --accent: #c81e1e;
     --gold: #d4b978;
+
+    --scroll-track: #111111;
+    --scroll-thumb: #a8a29e;
+    --scroll-thumb-hover: #d4b978;
 }
 
 /* =========================
    BASE
 ========================= */
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
-    background: var(--bg);
+    background: var(--bg-gradient);
     color: var(--ink);
-    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-family: ui-serif, Georgia, serif;
     letter-spacing: 0.03em;
 }
 
@@ -47,16 +53,20 @@ body {
 }
 
 /* =========================
-   CORNER MENU
+   CORNER MENUS
 ========================= */
-.corner-menu {
+.corner-menu,
+.corner-menu-left {
     position: fixed;
     top: 1.5rem;
-    right: 1.5rem;
-    z-index: 10;
+    z-index: 20;
 }
 
-.corner-menu button {
+.corner-menu { right: 1.5rem; }
+.corner-menu-left { left: 1.5rem; }
+
+.corner-menu button,
+.corner-menu-left button {
     background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(0,0,0,0.12));
     border: 1px solid var(--border);
     color: var(--ink);
@@ -68,7 +78,8 @@ body {
     text-transform: uppercase;
 }
 
-.corner-menu button:hover {
+.corner-menu button:hover,
+.corner-menu-left button:hover {
     color: var(--gold);
     border-color: var(--gold);
 }
@@ -78,7 +89,6 @@ body {
 ========================= */
 .header {
     margin-bottom: 3rem;
-    height: 7rem;
 }
 
 .header h1 {
@@ -97,7 +107,7 @@ body {
 }
 
 /* =========================
-   MENU FLEX CONTAINER
+   MENU GRID
 ========================= */
 #menu {
     display: flex;
@@ -107,7 +117,7 @@ body {
 }
 
 /* =========================
-   CARD DRINK ENTRY
+   DRINK CARD
 ========================= */
 .drink {
     display: flex;
@@ -115,115 +125,50 @@ body {
     align-items: center;
     max-width: 360px;
     width: 100%;
-    background: var(--paper);
+    background: var(--card-gradient);
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow:
-        0 20px 40px rgba(0,0,0,0.35),
-        0 0 0 1px var(--border),
-        inset 0 0 20px rgba(255,255,255,0.03);
+        0 20px 40px rgba(0,0,0,0.2),
+        inset 0 2px 8px rgba(255,255,255,0.08);
+    min-height: 480px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    min-height: 480px; /* uniform card height */
 }
 
-/* Optional separator line between cards */
-.drink::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 65%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--border), transparent);
-    transform: translateX(-50%);
+.drink:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.35),
+        inset 0 4px 12px rgba(255,255,255,0.12);
 }
 
-.drink:first-child::before {
-    display: none;
-}
-
-/* =========================
-   IMAGE
-========================= */
 .drink img {
     width: 100%;
     max-height: 240px;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
     object-fit: contain;
-    background-color: var(--paper);
-    padding: 0.25rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-}
-
-.drink img:hover {
-    transform: translateY(-6px);
-    box-shadow:
-        0 35px 70px rgba(0,0,0,0.45),
-        0 0 0 1px var(--gold),
-        inset 0 0 20px rgba(255,255,255,0.05);
-    filter: drop-shadow(0 0 10px var(--gold));
-}
-
-/* =========================
-   FALLBACK IMAGE DIV
-========================= */
-.drink-no-photo {
-    width: 100%;
-    height: 240px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 12px;
-    background-color: var(--paper);
-    border: 1px solid var(--border);
-    box-shadow:
-        0 20px 40px rgba(0,0,0,0.35),
-        inset 0 0 20px rgba(255,255,255,0.03);
-    text-align: center;
     margin-bottom: 1.5rem;
-}
-
-.drink-no-photo h1 {
-    font-size: 1.2rem;
-    color: var(--muted);
-    margin: 0;
-}
-
-/* =========================
-   NAME
-========================= */
-.drink-name {
-    font-size: 2rem;
-    margin: 0 0 1rem;
-    font-weight: 500;
-}
-
-/* =========================
-   SECTION HEADERS
-========================= */
-.section-title {
-    margin: 1rem 0 0.5rem;
-    font-size: 1.4rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    position: relative;
-}
-
-.section-title::after {
-    content: "";
-    display: block;
-    width: 80%;
-    max-width: 15rem;
-    height: 0.4rem;
-    margin: 0.5rem auto 0;
-    background: linear-gradient(to right, transparent, var(--border), transparent);
 }
 
 /* =========================
    SECTIONS
 ========================= */
+.section-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 1rem;
+}
+
+.section-divider {
+    width: 60%;
+    height: 2px;
+    margin: 0.5rem auto 1rem;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
 .drink-section {
     list-style: none;
     padding: 0;
@@ -232,13 +177,9 @@ body {
 
 .drink-section li {
     margin: 0.3rem 0;
-    font-size: 1.1rem;
     color: var(--muted);
 }
 
-/* =========================
-   ALLERGENS
-========================= */
 .drink-section li.allergen {
     font-size: 0.95rem;
     letter-spacing: 0.15em;
@@ -247,37 +188,178 @@ body {
 }
 
 /* =========================
+   MODALS
+========================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal {
+    background: var(--card-gradient);
+    border-radius: 14px;
+    padding: 2rem;
+    max-width: 420px;
+    width: 90%;
+    box-shadow:
+        0 40px 80px rgba(0,0,0,0.6),
+        0 0 0 1px var(--border);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu Modal */
+.modal-menu button {
+    display: block;
+    width: 100%;
+    margin: 0.75rem 0;
+    padding: 0.75rem;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--ink);
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.modal-menu button:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* QR Card */
+.qr-card img {
+    width: 100%;
+    max-width: 260px;
+    margin-bottom: 1.25rem;
+}
+
+/* =========================
+   SEARCH MODAL
+========================= */
+.search-card {
+    max-height: 80vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Search input */
+.search-card input {
+    width: 95%;
+    max-width: 600px;
+    padding: 0.65rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+    text-align: left;
+    background: var(--card-gradient);
+    color: var(--ink);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-card input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 8px rgba(191, 163, 106, 0.4);
+}
+
+.search-card input::placeholder {
+    color: var(--muted);
+}
+
+/* Scrollbar styling */
+.search-card::-webkit-scrollbar {
+    width: 10px;
+}
+
+.search-card::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+    border-radius: 6px;
+}
+
+.search-card::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb);
+    border-radius: 6px;
+    border: 2px solid var(--scroll-track);
+}
+
+.search-card::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scroll-thumb-hover);
+}
+
+.search-card {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+/* Container for search results */
+#searchResultsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Cards inside search modal */
+#searchResultsContainer .drink {
+    flex: 1 1 calc(100% - 1rem);
+    max-width: 360px;
+}
+
+/* Responsive search cards */
+@media (min-width: 481px) and (max-width: 768px) {
+    #searchResultsContainer .drink { flex: 1 1 calc(50% - 1rem); }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    #searchResultsContainer .drink { flex: 1 1 calc(33% - 1.5rem); }
+}
+
+@media (min-width: 1201px) {
+    #searchResultsContainer .drink { flex: 1 1 calc(33% - 2rem); }
+}
+
+/* Make search modal wider on desktop */
+#searchModal .modal {
+    max-width: 90%;
+    width: 90%;
+}
+
+@media (min-width: 769px) {
+    #searchModal .modal {
+        max-width: 1000px;
+        width: 90%;
+    }
+}
+
+/* =========================
    RESPONSIVE CARD SIZING
 ========================= */
-
-/* Very small phones */
 @media (max-width: 480px) {
-    .drink {
-        flex: 1 1 calc(100% - 1rem);
-        min-height: 440px;
-    }
+    .drink { flex: 1 1 calc(100% - 1rem); min-height: 440px; }
 }
 
-/* Phones: 2 per row */
 @media (min-width: 481px) and (max-width: 768px) {
-    .drink {
-        flex: 1 1 calc(50% - 1rem);
-        min-height: 460px;
-    }
+    .drink { flex: 1 1 calc(50% - 1rem); min-height: 460px; }
 }
 
-/* Tablets: 3 per row */
 @media (min-width: 769px) and (max-width: 1200px) {
-    .drink {
-        flex: 1 1 calc(33.333% - 1.66rem);
-        min-height: 480px;
-    }
+    .drink { flex: 1 1 calc(33.333% - 1.66rem); min-height: 480px; }
 }
 
-/* Desktops: 3 per row */
 @media (min-width: 1201px) {
-    .drink {
-        flex: 1 1 calc(33.333% - 2.5rem);
-        min-height: 480px;
-    }
+    .drink { flex: 1 1 calc(33.333% - 2.5rem); min-height: 480px; }
 }
