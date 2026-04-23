@@ -193,6 +193,55 @@
         "spiced",
         "collins cocktail"
       ]
+    },
+    {
+      "name": "Shanghai Street Fight",
+      "photo": "noPhoto.jpg",
+      "contents": [
+        "Rye Whiskey",
+        "Aperol",
+        "Fernet-Branca",
+        "Angostura Bitters",
+        "Orange Peel"
+      ],
+      "description": ["Bitter", "Bold", "Herbal", "Spirit-forward", "Citrusy"],
+      "allergens": [],
+      "keywords": [
+        "shanghai street fight",
+        "rye whiskey",
+        "aperol",
+        "fernet branca",
+        "bitters",
+        "stirred",
+        "rocks",
+        "bitter cocktail",
+        "herbal drink"
+      ]
+    },
+    {
+      "name": "That Yuzu, That You Do",
+      "photo": "noPhoto.jpg",
+      "contents": [
+        "Blanco Tequila",
+        "Grand Marnier",
+        "Lime Juice",
+        "Yuzu",
+        "Agave",
+        "Salt"
+      ],
+      "description": ["Citrusy", "Bright", "Tart", "Salty", "Refreshing"],
+      "allergens": [],
+      "keywords": [
+        "that yuzu that you do",
+        "tequila",
+        "yuzu",
+        "grand marnier",
+        "lime",
+        "agave",
+        "salt rim",
+        "rocks cocktail",
+        "citrus drink"
+      ]
     }
 
 
