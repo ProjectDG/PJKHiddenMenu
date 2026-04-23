@@ -4,27 +4,29 @@
       "name": "Shiso Lovely",
       "photo": "shisoLovely.jpg",
       "contents": [
-        "Vodka", 
-        "Shiso", 
-        "Simple Syrup", 
-        "Lemon Juice", 
+        "Vodka",
+        "Shiso",
+        "Simple Syrup",
+        "Lemon Juice",
         "Soda Water"
       ],
       "description": ["Bright", "Herbal", "Refreshing"],
-      "allergens": ["Citrus"],
+      "allergens": [],
       "keywords": ["herbal", "vodka", "refreshing"]
     },
     {
       "name": "PJK Old Fashioned",
       "photo": "pjkOldFashioned.jpg",
       "contents": [
-        "Rye Whiskey", 
-        "Black Tea Simple Syrup", 
-        "Angostura & Citrus Bitters",
-         "Orange & Cherry Garnish"
-        ],
+        "Rye Whiskey",
+        "Black Tea Simple Syrup",
+        "Angostura Bitters",
+        "Orange Bitters",
+        "Orange",
+        "Cherry"
+      ],
       "description": ["Strong", "Smooth", "Citrusy"],
-      "allergens": ["Citrus"],
+      "allergens": [],
       "keywords": ["whiskey", "strong", "classic"]
     },
     {
@@ -41,7 +43,7 @@
         "Club Soda"
       ],
       "description": ["Fruity", "Bright", "Light"],
-      "allergens": ["Citrus"],
+      "allergens": [],
       "keywords": ["sake", "sangria", "fruity", "refreshing", "wine-style"]
     },
     {
@@ -52,10 +54,10 @@
         "Cointreau",
         "Lime Juice",
         "Agave",
-        "Salt Rim (optional)"
+        "Salt Rim"
       ],
       "description": ["Bright", "Citrusy", "Balanced"],
-      "allergens": ["Citrus"],
+      "allergens": [],
       "keywords": ["tequila", "citrus", "margarita-style", "refreshing"]
     },
     {
@@ -81,7 +83,118 @@
       "description": [],
       "allergens": [],
       "keywords": ["qr", "digital", "scannable"]
+    },
+    {
+      "name": "Empress Wu",
+      "photo": "noPhoto.jpg",
+      "contents": [
+        "Vodka",
+        "Basil Brandy",
+        "Lime Juice",
+        "Simple Syrup",
+        "Basil"
+      ],
+      "description": ["Herbal", "Citrusy", "Fresh", "Lightly Sweet"],
+      "allergens": [],
+      "keywords": ["vodka", "basil", "herbal", "citrus", "fresh", "shaken", "craft"]
+    },
+    {
+      "name": "Golden Crane",
+      "photo": "noPhoto.jpg",
+      "contents": [
+        "Sesame Whiskey",
+        "Five Spice Syrup",
+        "Ginger Bitters"
+      ],
+      "description": ["Spicy", "Aromatic", "Rich", "Spirit-forward"],
+      "allergens": ["Sesame"],
+      "keywords": [
+        "golden crane",
+        "whiskey",
+        "sesame",
+        "spice",
+        "ginger",
+        "bitters",
+        "stirred",
+        "rocks cocktail"
+      ]
+    },
+    {
+      "name": "Midnight Hour",
+      "photo": "noPhoto.jpg",
+      "contents": [
+        "Dark Rum",
+        "Basil Brandy",
+        "Lime Juice",
+        "Five Spice Syrup"
+      ],
+      "description": ["Rich", "Herbal", "Spiced", "Tropical"],
+      "allergens": [],
+      "keywords": [
+        "midnight hour",
+        "dark rum",
+        "basil brandy",
+        "lime",
+        "five spice",
+        "shaken",
+        "coupe",
+        "herbal cocktail",
+        "tropical cocktail"
+      ]
+    },
+    {
+      "name": "After Hours",
+      "photo": "noPhoto.jpg",
+      "contents": [
+        "Gin",
+        "Citrus Vodka",
+        "Lillet Blanc",
+        "Orange Bitters"
+      ],
+      "description": ["Botanical", "Citrusy", "Aromatic", "Dry", "Spirit-forward"],
+      "allergens": [],
+      "keywords": [
+        "after hours",
+        "martini",
+        "gin",
+        "botanical",
+        "citrus gin",
+        "lillet blanc",
+        "stirred",
+        "orange bitters",
+        "cocktail"
+      ]
+    },
+    {
+      "name": "PJ Killa",
+      "photo": "noPhoto.jpg",
+      "contents": [
+        "Coconut Rum",
+        "Cherry Liqueur",
+        "Drambuie",
+        "Lillet Blanc",
+        "Lime Juice",
+        "Simple Syrup",
+        "Pineapple Juice",
+        "Cinnamon Stick",
+        "Dehydrated Lime"
+      ],
+      "description": ["Tropical", "Sweet", "Spiced", "Citrusy", "Rich"],
+      "allergens": [],
+      "keywords": [
+        "pj killa",
+        "coconut rum",
+        "cherry liqueur",
+        "drambuie",
+        "lillet blanc",
+        "pineapple",
+        "lime",
+        "tropical",
+        "spiced",
+        "collins cocktail"
+      ]
     }
+
 
 
 
